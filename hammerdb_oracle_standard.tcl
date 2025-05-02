@@ -108,8 +108,8 @@ switch $myposition {
                 puts "Rampup complete, Taking start Transaction Count."
                 set start_trans [ standsql $curn2 $sql1 ]
             } else {
-                puts "Rampup complete, Taking start transaction count from V$SYSSTAT."
-                set sql_trans "SELECT SUM(value) FROM vsysstat WHERE name IN ('user commits','user rollbacks')"
+                puts "Rampup complete, Taking start transaction count from VSYSSTAT."
+                set sql_trans "SELECT SUM(value) FROM v\$sysstat WHERE name IN ('user commits','user rollbacks')"
                 set start_commit_vals [ standsql $curn1 $sql_trans ]
                 set start_trans 0
                 foreach val $start_commit_vals { set start_trans [ expr {$start_trans + $val} ] }
@@ -145,7 +145,7 @@ switch $myposition {
                 puts "[ expr $totalvirtualusers - 1 ] Active Virtual Users configured"
                 puts [ testresult $nopm $tpm TimesTen ]
             } else {
-                puts "Test complete, Taking end transaction count from V$SYSSTAT."
+                puts "Test complete, Taking end transaction count from VSYSSTAT."
                 set end_commit_vals [ standsql $curn1 $sql_trans ]
                 set end_trans 0
                 foreach val $end_commit_vals { set end_trans [ expr {$end_trans + $val} ] }
