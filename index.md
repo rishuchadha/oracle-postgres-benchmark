@@ -6,10 +6,11 @@ layout: default
 # Oracle Standard Edition vs PostgreSQL Community: A Real-World HammerDB Benchmark
 
 ## Introduction
-With the ever-evolving landscape of database technologies, Oracle and PostgreSQL remain two of the most dominant choices for transactional workloads. Oracle Standard Edition (SE) offers robustness and mature transaction handling, while PostgreSQL Community Edition (CE) is widely adopted for its performance, flexibility, and open-source model.
+In today’s fast-changing world of database technologies, Oracle and PostgreSQL continue to be top contenders for handling transactional workloads. Oracle Standard Edition (SE) is known for its reliability and mature transaction capabilities, while PostgreSQL Community Edition (CE) stands out for its speed, flexibility, and open-source appeal.
 
-To evaluate these two under realistic OLTP conditions, I used [HammerDB](https://www.hammerdb.com/), an industry-standard benchmarking tool, to run **TPC-C** workloads and compare **New Orders per Minute (NOPM)** and **Transactions per Minute (TPM)** between Oracle SE and PostgreSQL CE.
+Curious to see how they stack up under real-world OLTP conditions, I used HammerDB, a well-regarded benchmarking tool, to run TPC-C workloads and compare key performance metrics—New Orders per Minute (NOPM) and Transactions per Minute (TPM)—between the two platforms.
 
+Surprisingly, I couldn’t find a clear head-to-head benchmark between Oracle SE and PostgreSQL CE in one place, so I decided to dig in and run my own tests.
 ---
 
 ## Benchmark Setup
@@ -98,7 +99,6 @@ If you’re deciding between Oracle SE and PostgreSQL CE:
 ## What’s Next?
 
 - I’ll be publishing the custom Tcl script used for Oracle SE with `v$sysstat` TPM logic
-- Planning to add CPU/memory impact charts and disk IOPS profiles in the next run
 
 ---
 
@@ -107,7 +107,6 @@ If you’re deciding between Oracle SE and PostgreSQL CE:
 If you found this comparison useful, feel free to:
 - Share it on LinkedIn or Reddit
 - Reach out for the raw numbers or full scripts
-- Drop a comment if you’d like to see MySQL or MariaDB included next!
 
 ---
 ![Benchmark Chart](output.png)
