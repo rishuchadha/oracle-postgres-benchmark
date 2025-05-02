@@ -14,17 +14,17 @@ To evaluate these two under realistic OLTP conditions, I used [HammerDB](https:/
 
 ## Benchmark Setup
 
-### 🔧 Environment:
+### Environment:
 - **Host OS**: Windows 10 Virtual Machine
 - **Memory**: 16 GB RAM
 - **CPU**: 8 vCPUs
 - **Disk**: SSD-backed
 
-### 🛠️ Database:
+### Database:
 - **Oracle Version**: 19c Standard Edition (SE2)
 - **PostgreSQL Version**: 15.3 (Community Edition)
 
-### 📦 Benchmark Tool:
+### Benchmark Tool:
 - **HammerDB Version**: 4.9
 - **Benchmark Profile**: TPC-C
 - **Virtual Users (VUs)**: 11
@@ -32,7 +32,7 @@ To evaluate these two under realistic OLTP conditions, I used [HammerDB](https:/
 - **Test Duration**: 20 minutes (Timed Test mode)
 - **Ramp-Up**: 5 minutes
 
-### ⚙️ Configuration:
+### Configuration:
 - **Oracle**: Custom Tcl script modified to avoid AWR (Standard Edition doesn't support it)
 - **PostgreSQL**: Default timed driver script
 
@@ -59,11 +59,11 @@ To evaluate these two under realistic OLTP conditions, I used [HammerDB](https:/
 
 ## Interpretation
 
-### 🟢 PostgreSQL Strengths:
+### PostgreSQL Strengths:
 - Higher NOPM indicates better session concurrency and faster front-end transaction start times
 - Great for stateless microservices and application-driven OLTP where commit guarantees are relaxed
 
-### 🔵 Oracle Strengths:
+### Oracle Strengths:
 - Higher TPM confirms its engine excels in transactional durability and commit-time performance
 - Ideal for finance, inventory, or mission-critical systems requiring rollback, undo/redo, and fine-grained consistency
 
@@ -110,7 +110,9 @@ If you found this comparison useful, feel free to:
 - Drop a comment if you’d like to see MySQL or MariaDB included next!
 
 ---
+![Benchmark Chart](output.png)
 
-**Author**: [Your Name]  
+
+**Author**: Rishu Chadha 
 **Date**: April 2025
 
